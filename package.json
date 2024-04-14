@@ -9,8 +9,9 @@
     "react-redux": "^9.1.0"
   },
   "scripts": {
-    "build": "npm install && npm install -g pm2",
-    "start": "pm2 start server.js"
+    "build": "npm install",
+    "test": "echo \"No test specified\" && exit 1",
+    "start": "node index.js"
   },
   "name": "server",
   "version": "1.0.0",
