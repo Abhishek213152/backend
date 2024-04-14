@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 
-import postRoutes from "./routes/posts.js";
+import postRoutes from "./routes/posts.js"
 
 const app = express();
 dotenv.config();
@@ -15,15 +15,15 @@ app.use(cors());
 
 app.use("/posts", postRoutes);
 
-app.get("/", (req, res) => {
-  res.send("Hello to travel API");
-});
+app.get("/", (req, res)=>{
+  res.send("Hello to travel API")
+})
 
 const PORT = process.env.PORT || 5000;
 
 mongoose
   .connect(process.env.CONNECTION_URL, {
-    dbName: "travelapp",
+    dbName: "travelapp", 
   })
   .then(() =>
     app.listen(PORT, () => {
@@ -31,6 +31,3 @@ mongoose
     })
   )
   .catch((error) => console.log(error.message));
-
-// Start the server using PM2
-const server = app.listen(); // Let PM2 handle the port
